@@ -12,7 +12,8 @@ function nextStepClick() {
     }
 
     var xhr = new XMLHttpRequest();
-    xhr.open('PUT', host + 'api/Account/Create', true);
+    var url = host + 'api/Account/Create';
+    xhr.open('PUT', url, true);
     xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF8;');
     xhr.origin = origin;
     xhr.responseType = 'json';

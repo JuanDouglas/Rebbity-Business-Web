@@ -14,13 +14,18 @@
 }
 
 @font-face {
-    font-family: 'Montserrat Normal;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ';
+    font-family: 'Montserrat Normal';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ';
     src: url('../font/Montserrat-Regular.ttf');
 }
 
 @font-face {
     font-family: 'Montserrat Black';
     src: url('../font/Montserrat-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Montserrat Bold';
+    src: url('../font/Montserrat-Bold.ttf');
 }
 
 @font-face {
@@ -102,20 +107,21 @@ input:focus {
 button{
     border: none;
     outline: none;
-    background: #FC0E2A;
+    background:linear-gradient(99deg, #fc8b1c, #FC0E2A);
     padding: 0.8rem 1.8em;
     color: white;
     cursor: pointer;
+    font-family: 'Montserrat Black';
     font-size: 15px;
     border-radius: 1rem;
 }
 
 button.round{
-    border: none;
+    border: linear-gradient(99deg, #fc8b1c, #FC0E2A);;
     outline: none;
     background: white;
+    color: linear-gradient(99deg, #fc8b1c, #FC0E2A);;
     padding: 0.8rem 1.8em;
-    color: #00A1AF;
     cursor: pointer;
     font-size: 15px;
     border-radius: 1rem;
