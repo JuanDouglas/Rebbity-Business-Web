@@ -190,13 +190,13 @@ function cpfOrCnpjMask(input) {
     input.value = text;
 }
 
-function passwordField(img,inputID){
+function passwordField(img, inputID) {
     var input = document.getElementById(inputID);
-    if(input.type=='password'){
+    if (input.type == 'password') {
         input.type = 'text';
-        img.style.content= "url('"+location.protocol + '//' + location.hostname +"/Resources/img/eye.svg')";
-    }else   {
+        img.style.content = "url('" + location.protocol + '//' + location.hostname + "/Resources/img/eye-slash.svg')";
+    } else {
         input.type = 'password';
-        img.style.content= "url('"+location.protocol + '//' + location.hostname +"/Resources/img/eye-slash.svg')";
+        img.style.content = "url('" + location.protocol + '//' + location.hostname + "/Resources/img/eye.svg')";
     }
 }
