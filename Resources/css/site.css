@@ -5,12 +5,27 @@
 
 @font-face {
     font-family: 'Roboto Regular';
-    src: url('../font/Roboto-Regular.ttf');
+    src: url('../font/Roboto-Light.ttf');
 }
 
 @font-face {
     font-family: 'Roboto Black';
     src: url('../font/Roboto-Black.ttf');
+}
+
+@font-face {
+    font-family: 'Montserrat Normal;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ';
+    src: url('../font/Montserrat-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Montserrat Black';
+    src: url('../font/Montserrat-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Montserrat Regular';
+    src: url('../font/Montserrat-Thin.ttf');
 }
 
 nav {
@@ -401,3 +416,19 @@ div.bottom-buttons{
   .dropdown a:hover {background-color: #ddd;}
   
   .show {display: block;}
+  
+  img.show-password{
+    width: 6%;
+    margin-top: -7%;
+    z-index: 2;
+    position: relative;
+    margin-right: 2%;
+    cursor: pointer;
+    transition: 0.2s;
+    content: url('../img/eye.svg');
+    height: auto; /*or your image's height*/
+}
+
+img.show-password:active{
+    transition: 0.4s;
+}

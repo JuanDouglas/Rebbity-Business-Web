@@ -57,7 +57,7 @@
                 <label class="error" id="PhoneNumberError"></Label>
 
                 <p>Senha</p>
-                <input type="password" name="Password" id="Password" onclick="disableError('Password')">
+                <input type="password" name="Password" id="Password" onclick="disableError('Password')"><img class="show-password" align="right" onclick="passwordField(this,'Password')"></input>
                 <label class="error" id="PasswordError"></Label>
 
                 <p>Confirma senha</p>
@@ -81,21 +81,18 @@
                 </div>
             </div>
         </div>
-        <div class="inline-half"
-            style="background:linear-gradient(45deg, #fc8b1c, #FC0E2A);border-radius: 2rem 1.1rem 1.1rem 2rem;box-shadow: 0 0 14px 0 rgb(0 0 0 / 30%);">
-            <div style="width: 100%; text-align: right;"><img width="50%" src="../../Resources/img/tread_name.png"
-                    style="margin-top: 10%;" /></div>
-            <h1 style="text-align: right;">Cadastra-se na Rebbity e aumente seu faturamento em at&eacute; 80%</h1>
-            <div class="center" style="margin: 5% 0;margin-top: 50%;">
-                <h2 style="color: white;margin:0">N&atilde;o perca dinheiro </h2>
-            </div>
+        <div class="inline-half half-left">
+            <div style="width: 100%; text-align: left;"><img width="60%" src="../../Resources/img/tread_name.png"
+                    style="margin-top: 20%;margin-left: 6%;" /></div>
+            <h2 class="left-top-text">N&atilde;o perca dinheiro!</h2>
+            <h3 class="left-text">Cadastra-se na Rebbity e aumente seu faturamento em at&eacute; 80%</h3>
         </div>
     </div>
     <footer>
-        <a>&copy; 2020 Rebbity Inc.</a> 
+        <a>&copy; 2021 Rebbity Inc.</a>
         <hr />
         <div style="display: inline-box;">
-          <a>Privacidade</a> <a>Termos</a> <a>Acessibilidade</a>
+            <a>Privacidade</a> <a>Termos</a> <a>Acessibilidade</a>
         </div>
     </footer>
     <div class="modal" id="confirmAccountModal">
@@ -108,7 +105,7 @@
                 <div class="inlikne" style="margin:0;">
                     <div>
                         <input name="ConfirmationCode" type="number" style="max-width: 14rem;"
-                            onkeypress="disableError('ConfirmationCode')" id="ConfirmationCode"  maxlength="5"/>
+                            onkeypress="disableError('ConfirmationCode')" id="ConfirmationCode" maxlength="5" />
                         <label class="error" id="ConfirmationCodeError"></label>
                     </div>
                     <button onclick="confirmCode()" style="margin: 0 0.7rem;">Confirma</button>

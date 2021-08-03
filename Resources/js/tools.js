@@ -189,3 +189,14 @@ function cpfOrCnpjMask(input) {
     }
     input.value = text;
 }
+
+function passwordField(img,inputID){
+    var input = document.getElementById(inputID);
+    if(input.type=='password'){
+        input.type = 'text';
+        img.style.content= location.protocol + '//' + location.hostname +"/Resources/img/eye.svg";
+    }else   {
+        input.type = 'password';
+        img.style.content= location.protocol + '//' + location.hostname +"/Resources/img/eye-splash.svg";
+    }
+}

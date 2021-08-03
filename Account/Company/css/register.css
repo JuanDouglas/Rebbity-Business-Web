@@ -18,3 +18,42 @@ width: 90%;
 cursor: pointer;
 margin: 0 0;
 }
+
+.left-top-text{
+    text-align: left;
+    font-family: 'Montserrat Black';
+    color: white;
+    margin:0 6%;
+    margin-top: 40%;
+    font-size: 1.8rem;
+}
+
+.left-text{
+    text-align: left;
+    font-family: 'Montserrat Regular';
+    color: white;
+    margin:0 6%;
+    font-size: 1.8rem;
+}
+
+div.half-left{
+    background:linear-gradient(45deg, #fc8b1c, #FC0E2A);
+    border-radius: 2rem 1.1rem 1.1rem 2rem;
+    box-shadow: 0 0 14px 0 rgb(0 0 0 / 30%);
+    font-family: 'Montserrat Regular';
+}
+
+img.show-password{
+    width: 6%;
+    margin-top: -7%;
+    z-index: 2;
+    position: relative;
+    margin-right: 2%;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+img.show-password:active{
+    src: url('Resopurces/img/eye-splash.svg');
+    transition: 0.2s;
+}
