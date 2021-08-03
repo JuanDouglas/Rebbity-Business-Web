@@ -1,3 +1,4 @@
+const host = 'https://api.rebbity.com/';
 function enableError(inputID, error) {
     var input = document.getElementById(inputID);
     var labelError = document.getElementById(inputID + "Error");

@@ -1,4 +1,3 @@
-var host = "https://api.rebbity.com";
 
 function zipCodeKeyUp() {
     var field = document.getElementById('WithdrawalCep');
@@ -34,7 +33,7 @@ function createCompanyClick() {
             }
 
             xhr.origin = origin;
-            xhr.open('PUT', form.action, true);
+            xhr.open('PUT', host+'api/Account/Company/Create', true);
             xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8;');
             xhr.responseType = 'json'
             xhr.onload = function () {

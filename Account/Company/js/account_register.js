@@ -1,5 +1,4 @@
 const xhr = new XMLHttpRequest();
-var host = "https://api.rebbity.com";
 
 function nextStepClick() {
     var form = document.getElementById('frmCreateAccount');
@@ -13,7 +12,7 @@ function nextStepClick() {
     }
     
     var xhr = new XMLHttpRequest();
-    xhr.open('PUT', form.action, true);
+    xhr.open('PUT', host+'api/Account/Create', true);
     xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF8;');
     xhr.origin = origin;
     xhr.responseType = 'json';
