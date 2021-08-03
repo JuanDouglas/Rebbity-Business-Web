@@ -418,7 +418,7 @@ div.bottom-buttons{
   .show {display: block;}
   
   img.show-password{
-    width: 6%;
+    width: 5%;
     margin-top: -7%;
     z-index: 2;
     position: relative;

@@ -41,19 +41,5 @@ div.half-left{
     border-radius: 2rem 1.1rem 1.1rem 2rem;
     box-shadow: 0 0 14px 0 rgb(0 0 0 / 30%);
     font-family: 'Montserrat Regular';
-}
-
-img.show-password{
-    width: 6%;
-    margin-top: -7%;
-    z-index: 2;
-    position: relative;
-    margin-right: 2%;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-img.show-password:active{
-    src: url('Resopurces/img/eye-splash.svg');
-    transition: 0.2s;
+    min-height: 44rem;
 }

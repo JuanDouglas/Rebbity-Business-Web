@@ -194,9 +194,9 @@ function passwordField(img,inputID){
     var input = document.getElementById(inputID);
     if(input.type=='password'){
         input.type = 'text';
-        img.style.content= location.protocol + '//' + location.hostname +"/Resources/img/eye.svg";
+        img.style.content= "url('"+location.protocol + '//' + location.hostname +"/Resources/img/eye.svg')";
     }else   {
         input.type = 'password';
-        img.style.content= location.protocol + '//' + location.hostname +"/Resources/img/eye-splash.svg";
+        img.style.content= "url('"+location.protocol + '//' + location.hostname +"/Resources/img/eye-slash.svg')";
     }
 }
