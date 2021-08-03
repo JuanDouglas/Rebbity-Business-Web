@@ -1,5 +1,5 @@
 const xhr = new XMLHttpRequest();
-var host = window.location.protocol + '//' + window.location.host + '/';
+var host = "https://api.rebbity.com";
 
 function nextStepClick() {
     var form = document.getElementById('frmCreateAccount');

@@ -1,4 +1,4 @@
-var host = window.location.protocol + '//' + window.location.host + '/';
+var host = "https://api.rebbity.com";
 
 function zipCodeKeyUp() {
     var field = document.getElementById('WithdrawalCep');
