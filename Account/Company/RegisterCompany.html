@@ -9,12 +9,12 @@
     <link rel="stylesheet" href="../../Resources/css/loading.css" />
     <script src="../../Resources/js/tools.js"></script>
     <script src="js/company_register.js"></script>
-    <title>Rebbity for Business</title>
+    <title>Rebbity Empresas</title>
 </head>
 
 <body onload="searchCategories()">
     <nav>
-        <p class="for-business-text">Rebbity For Business</p>
+        <p class="for-business-text">Rebbity para Empresas</p>
     </nav>
     <script>
         function minBilling(input) {
@@ -37,7 +37,7 @@
     </script>
     <div class="card" style="width: 30rem;">
         <!-- Loader -->
-        <div id="loading" class="blobs" style="display:none;margin-top: 20%;">
+        <div id="loading" class="blobs" style="display:none;margin-top: 40%;margin-bottom: 40%;">
             <div class="blob-center"></div>
             <div class="blob"></div>
             <div class="blob"></div>
@@ -105,14 +105,14 @@
                 <label for="OwnerDelivery">Usar entrega pr&oacute;pia.</label>
             </p>
         </form>
-        <button onclick="createCompanyClick()">Pr&oacute;ximo</button>
+      <div style="width: 100%;text-align: right;">  <button id="nextButton" onclick="createCompanyClick()">Pr&oacute;ximo</button></div>
     </div>
     </div>
     <footer>
         <a>&copy; 2020 Rebbity Inc.</a> 
         <hr />
         <div style="display: inline-box;">
-             <a>Privacidade</a> <a>Privacidade</a> <a>Termos</a> <a>Acessibilidade</a>
+             <a>Privacidade</a> <a>Privacidade</a> <a>Termos</a> 
         </div>
     </footer>
     <div style="padding-top: 0;" class="modal" id="CompanyAdressModal">

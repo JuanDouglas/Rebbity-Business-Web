@@ -10,9 +10,9 @@ function nextStepClick() {
         "PhoneNumber": form.PhoneNumber.value,
         "AcceptTerms": form.AcceptTerms.checked
     }
-    
+
     var xhr = new XMLHttpRequest();
-    xhr.open('PUT', host+'api/Account/Create', true);
+    xhr.open('PUT', host + 'api/Account/Create', true);
     xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF8;');
     xhr.origin = origin;
     xhr.responseType = 'json';
@@ -25,7 +25,6 @@ function nextStepClick() {
                 enableError(key, value);
                 console.log(key, value);
             });
-
         } else if (status == 200) {
             loginAccount(form.Email.value, form.ConfirmPassword.value);
             show("confirmAccountModal");

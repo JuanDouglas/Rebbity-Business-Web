@@ -9,6 +9,7 @@ function createCompanyClick() {
     var frmCategory = document.getElementById('CompanyCategory');
     var url = host + 'api/Account/Company/SearchCompanyCategory?unique=true&page=0&search_key=' + frmCategory.value;
     var xhr = new XMLHttpRequest();
+    loadingShow();
     xhr.open('GET', url, true);
     xhr.withCredentials = true;
     xhr.responseType = 'json';
@@ -51,17 +52,21 @@ function createCompanyClick() {
                     var modal = document.getElementById('CompanyAdressModal');
                     modal.style.display = 'block';
                 }
+                loadingHide();
             }
             xhr.send(JSON.stringify(json));
         }
+        
         if (status == 404) {
             enableError('CompanyCategory', 'Selecione uma categoria valida!');
         }
+        loadingHide();
     }
     if (frmCategory.value.length > 1) {
         xhr.send();
     } else {
         enableError('CompanyCategory', 'Selecione uma categoria!');
+        loadingHide();
     }
 }
 
@@ -89,10 +94,10 @@ function loadingShow() {
     var loading = document.getElementById('loading');
     loading.style.display = 'block';
 
-    var form = document.getElementById('frmCreateAccount');
+    var form = document.getElementById('frmCompany');
     form.style.display = 'none';
 
-    var buttons = document.getElementById('buttons');
+    var buttons = document.getElementById('nextButton');
     buttons.style.display = 'none';
 }
 
@@ -100,9 +105,9 @@ function loadingHide() {
     var loading = document.getElementById('loading');
     loading.style.display = 'none';
 
-    var form = document.getElementById('frmCreateAccount');
+    var form = document.getElementById('frmCompany');
     form.style.display = 'block';
 
-    var buttons = document.getElementById('buttons');
-    buttons.style.display = 'inline-flex';
+    var buttons = document.getElementById('nextButton');
+    buttons.style.display = 'block';
 }
