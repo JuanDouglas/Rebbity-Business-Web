@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../../Resources/css/site.css" />
+    <link rel="icon" type="image/icon" href="../../Resources/img/tread_white.png" />
+    <link rel="stylesheet" href="../../Resources/css/loading.css" />
+    <script src="../../Resources/js/tools.js"></script>
+    <script src="js/company_register.js"></script>
+    <title>Rebbity for Business</title>
+</head>
+
+<body onload="searchCategories()">
+    <nav>
+        <p class="for-business-text">Rebbity For Business</p>
+    </nav>
+    <script>
+        function minBilling(input) {
+            var value = input.value;
+            disableError(input.id);
+            if (value < 1.0) {
+                input.value = 1.0;
+                enableError(input.id, 'O valor deve ser maior que 1.0');
+            }
+        }
+
+        function minEmployees(input){
+            var value = input.value;
+            disableError(input.id);
+            if (value < 1) {
+                input.value = 1.0;
+                enableError(input.id, 'Deve haver ao menos 1 funcionario');
+            }
+        }
+    </script>
+    <div class="card" style="width: 30rem;">
+        <!-- Loader -->
+        <div id="loading" class="blobs" style="display:none;margin-top: 20%;">
+            <div class="blob-center"></div>
+            <div class="blob"></div>
+            <div class="blob"></div>
+            <div class="blob"></div>
+            <div class="blob"></div>
+            <div class="blob"></div>
+            <div class="blob"></div>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <defs>
+                <filter id="goo">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                        result="goo" />
+                    <feBlend in="SourceGraphic" in2="goo" />
+                </filter>
+            </defs>
+        </svg>
+
+        <form method="PUT" action="../../api/Account/Company/Create" id="frmCompany">
+            <p>Nome da Empresa</p>
+            <input type="text" name="Name" id="Name" onclick="disableError('Name')">
+            <label class="error" id="NameError"></Label>
+
+            <p>CPF ou CNPJ</p>
+            <input onkeyup="cpfOrCnpjMask(this)" type="text" name="CpfOrCnpj" id="CpfOrCnpj"
+                onclick="disableError('CpfOrCnpj')">
+            <label class="error" id="CpfOrCnpjError"></Label>
+
+            <p>Celular do respons&aacute;vel</p>
+            <input type="text" onkeyup="phoneMask(this)" maxlength="16" name="PhoneNumber" id="PhoneNumber"
+                onclick="disableError('PhoneNumber')">
+            <label class="error" id="PhoneNumberError"></Label>
+
+            <p>Rendimento Mensal</p>
+            <input type="number" name="BillingMonthly" id="BillingMonthly" onclick="disableError('BillingMonthly')"
+                min="1.00" step="0.01" value="1000.00" onkeyup="minBilling(this)" />
+            <label class="error" id="BillingMonthlyError"></Label>
+
+            <p>Funcion&aacute;rios na empresa</p>
+            <input type="number" list="EmployeesNumberList" name="EmployeesNumber" id="EmployeesNumber"
+                onclick="disableError('EmployeesNumber')" onkeyup="minEmployees(this)" value="1">
+            <label class="error" id="EmployeesNumberError"></Label>
+            <datalist id="EmployeesNumberList">
+                <option value="5">0-5</option>
+                <option value="10">5-10</option>
+                <option value="20">10-20</option>
+                <option value="50">20-50</option>
+                <option value="100">50-100</option>
+                <option value="500">100-500</option>
+                <option value="700">500-1000</option>
+                <option value="2500">1000-5000</option>
+                <option value="7250">5000-10000</option>
+                <option value="25000">10000-50000</option>
+            </datalist>
+
+            <p>Categoria da empresa</p>
+            <input type="text" list="CategoriesList" id="CompanyCategory" onclick="disableError('CompanyCategory')">
+            <label class="error" id="CompanyCategoryError"></Label>
+            <datalist id="CategoriesList">
+            </datalist>
+
+            <p class="input-text">
+                <input id="OwnerDelivery" type="checkbox" name="OwnerDelivery" onclick="disableError('OwnerDelivery')">
+                <label for="OwnerDelivery">Usar entrega pr&oacute;pia.</label>
+            </p>
+        </form>
+        <button onclick="createCompanyClick()">Pr&oacute;ximo</button>
+    </div>
+    </div>
+    <footer>
+        Footer
+        <hr />
+        <div style="display: inline-box;">
+            <a>&copy; 2020 Rebbity Inc.</a> <a>Privacidade</a> <a>Privacidade</a> <a>Termos</a> <a>Acessibilidade</a>
+        </div>
+    </footer>
+    <div style="padding-top: 0;" class="modal" id="CompanyAdressModal">
+        <div class="card">
+            <h2 style="text-align: center;">Endereço da empresa</h2>
+            <style>
+                div.line {
+                    padding: 0 1.5rem;
+                }
+
+                p.adress {
+                    padding-top: 0;
+                    margin-top: 0;
+                }
+            </style>
+            <div class="line">
+                <p class="adress">Cep</p>
+                <input type="text" name="WithdrawalCep" id="WithdrawalCep" onclick="disableError('WithdrawalCep')"
+                    onkeyup="zipCodeKeyUp('Withdrawal')" maxlength="9" style="           max-width: 6rem;">
+                <label class="error" id="WithdrawalCepError"></label>
+            </div>
+            <div class="inline">
+                <div class="inline-half line">
+                    <p class="adress">Cidade</p>
+                    <input type="text" name="WithdrawalCity" id="WithdrawalCity"
+                        onclick="disableError('WithdrawalCity')">
+                    <label class="error" id="WithdrawalCityError"></label>
+                </div>
+                <div class="inline-half line">
+                    <p class="adress">Bairro</p>
+                    <input type="text" name="WithdrawalNbhood" id="WithdrawalNbhood"
+                        onclick="disableError('WithdrawalNbhood')">
+                    <label class="error" id="WithdrawalNbhoodError"></label>
+                </div>
+            </div>
+            <div class="line">
+                <p class="adress">Endereço</p>
+                <input type="text" name="WithdrawalPPlace" id="WithdrawalPPlace"
+                    onclick="disableError('WithdrawalPPlace')">
+                <label class="error" id="WithdrawalPPlaceError"></label>
+            </div>
+            <div class="inline line">
+                <div>
+                    <p class="adress">Numero</p>
+                    <input type="number" name="WithdrawalNumber" id="WithdrawalNumber" min="1"
+                        onclick="disableError('WithdrawalNumber')" style="max-width: 1.5rem;min-width: 2.5rem;">
+                    <label class="error" id="WithdrawalNumberError"></label>
+                </div>
+                <div class="line" style="width: -webkit-fill-available; ">
+                    <p class="adress">Complemento</p>
+                    <input type="text" name="WithdrawalComplement" id="WithdrawalComplement"
+                        onclick="disableError('WithdrawalComplement')" style="             margin-right: 1.5rem;  ">
+                    <label class="error" id="WithdrawalComplementError"></label>
+                </div>
+            </div>
+            <div class="inline" style="margin:0;margin-left: -1.5rem;">
+                <div style="text-align: right;width: inherit;">
+                    <button>Próximo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

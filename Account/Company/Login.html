@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="../../Resources/css/site.css" />
+    <link rel="icon" type="image/icon" href="../../Resources/img/tread.png" />
+    <link rel="stylesheet" href="../../Resources/css/loading.css" />
+    <script src="../../Resources/js/tools.js"></script>
+    <script src="js/account_register.js"></script>
+    <title>Rebbity for Business</title>
+</head>
+
+<body>
+    <nav>
+        <p class="for-business-text">Rebbity For Business</p>
+    </nav>
+    <div class="card inline">
+        <div class="inline-half">
+            <!-- Loader -->
+            <div id="loading" class="blobs" style="display:none;">
+                <div class="blob-center"></div>
+                <div class="blob"></div>
+                <div class="blob"></div>
+                <div class="blob"></div>
+                <div class="blob"></div>
+                <div class="blob"></div>
+                <div class="blob"></div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                <defs>
+                    <filter id="goo">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                            result="goo" />
+                        <feBlend in="SourceGraphic" in2="goo" />
+                    </filter>
+                </defs>
+            </svg>
+
+            <div class="inline bottom-buttons" id="buttons">
+                <div class="inline-half" style="              padding: 2.5rem 0.5rem;         width: 73%; ">
+                    J&aacute; tem uma conta ? <i class="link">Fazer Login</i></div>
+                <div class="inline-half" style="text-align: right;">
+                    <button onclick="nextStepClick()" type="button">Pr&oacute;ximo</button>
+                </div>
+            </div>
+        </div>
+        <div class="inline-half" style="background:#00727C">
+            <h1>Venda mais com a Rabbity para seu neg&oacute;cio.</h1>
+        </div>
+    </div>
+    <footer>
+        Footer
+        <hr />
+        <div style="display: inline-box;">
+            <a>&copy; 2020 Rebbity Inc.</a> <a>Privacidade</a> <a>Privacidade</a> <a>Termos</a> <a>Acessibilidade</a>
+        </div>
+    </footer>
+</body>
+
+</html>

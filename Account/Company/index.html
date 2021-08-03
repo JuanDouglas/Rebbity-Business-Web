@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="../../Resources/css/site.css" />
+    <link rel="icon" type="image;icon" href="../../Resources/img/tread.png" />
+    <script src="../../Resources/js/tools.js"></script>
+    <script src="../../Resources/js/account_register.js"></script>
+    <title>Rebbity for Business</title>
+</head>
+
+<body>
+    <nav>Rebbity For Business<button class="round">Come&ccedil;ar</button></nav>
+    <div class="card">
+       <form method="PUT" action="api/Account/Create" id="frmCreateAccount">
+        <h1>Vamos come&ccedil;ar</h1>
+
+        <p>Nome Completo</p>
+        <input type="text" name="Name" id="Name">
+        <label id="NameError"></Label>
+
+        <p>Email</p>
+        <input type="email" name="Email" id="Email">
+        <label id="EmailError"></Label>
+
+        <p>Numero de Celular</p>
+        <input type="text" onkeyup="phoneMask(this)" maxlength="16" name="PhoneNumber" id="PhoneNumber">
+        <label id="PhoneNumberError"></Label>
+
+        <p>Senha</p>
+        <input type="password" name="Password" id="Password">
+        <label id="PasswordError"></Label>
+
+        <p>Confirma senha</p>
+        <input type="password" name="ConfirmPassword" id="ConfirmPassword">
+        <label id="ConfirmPasswordError"></Label>
+
+        <p class="input-text">
+            <input id="AcceptTerms" type="checkbox" name="AcceptTerms" onclick="disableError('AcceptTerms')">
+            <label for="AcceptTerms">Aceito os <i class="link">Termos</i> e <i class="link">Politica de
+                    privacidade</i>.</label>
+        </p>
+        <label id="AcceptTermsError"></Label>
+       </form>
+       <div class="inline">
+           <div class="inline-half" style="  padding: 2.5rem 0.5rem; width: 73%;">
+               J&aacute; tem uma conta ? <i class="link">Fazer Login</i>
+           </div>
+       <div style="text-align: right;"><button onclick="nextStepClick()">Pr&oacute;ximo</button></div>
+    </div>
+    </div>
+</body>
+</html>

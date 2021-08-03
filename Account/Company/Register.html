@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../Resources/css/site.css" />
+    <link rel="icon" type="image/icon" href="../../Resources/img/tread_white.png" />
+    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="../../Resources/css/loading.css" />
+    <script src="../../Resources/js/tools.js"></script>
+    <script src="js/account_register.js"></script>
+    <title>Rebbity for Business</title>
+</head>
+
+<body onload="isAuthenticated()">
+    <nav>
+        <p class="for-business-text">Rebbity Empresas</p>
+    </nav>
+    <div class="card inline" style="border-radius: 1.1rem 4rem 4rem 1.1rem;">
+        <div class="inline-half">
+            <!-- Loader -->
+            <div id="loading" class="blobs" style="display:none;margin-top: 20%;">
+                <div class="blob-center"></div>
+                <div class="blob"></div>
+                <div class="blob"></div>
+                <div class="blob"></div>
+                <div class="blob"></div>
+                <div class="blob"></div>
+                <div class="blob"></div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                <defs>
+                    <filter id="goo">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                            result="goo" />
+                        <feBlend in="SourceGraphic" in2="goo" />
+                    </filter>
+                </defs>
+            </svg>
+
+            <form method="PUT" action="../../api/Account/Create" id="frmCreateAccount">
+                <h2>Vamos come&ccedil;ar!</h2>
+
+                <p>Nome Completo</p>
+                <input type="text" name="Name" id="Name" onclick="disableError('Name')">
+                <label class="error" id="NameError"></Label>
+
+                <p>Email</p>
+                <input type="email" name="Email" id="Email" onclick="disableError('Email')">
+                <label class="error" id="EmailError"></Label>
+
+                <p>Numero de Celular</p>
+                <input type="text" onkeyup="phoneMask(this)" maxlength="16" name="PhoneNumber" id="PhoneNumber"
+                    onclick="disableError('PhoneNumber')">
+                <label class="error" id="PhoneNumberError"></Label>
+
+                <p>Senha</p>
+                <input type="password" name="Password" id="Password" onclick="disableError('Password')">
+                <label class="error" id="PasswordError"></Label>
+
+                <p>Confirma senha</p>
+                <input type="password" name="ConfirmPassword" id="ConfirmPassword"
+                    onclick="disableError('ConfirmPassword')">
+                <label class="error" id="ConfirmPasswordError"></Label>
+
+                <p class="input-text">
+                    <input id="AcceptTerms" type="checkbox" name="AcceptTerms" onclick="disableError('AcceptTerms')">
+                    <label for="AcceptTerms">Eu concordo e aceito os <i class="link">Termos</i> e <i
+                            class="link">Pol&iacute;tica de
+                            Privacidade</i>.</label>
+                </p>
+                <label class="error" id="AcceptTermsError"></Label>
+            </form>
+            <div class="inline bottom-buttons" id="buttons">
+                <div class="inline-half" style="              padding: 2.5rem 0.5rem;         width: 73%; ">
+                    J&aacute; tem uma conta ? <i class="link" onclick="location.href='Login.html'">Fazer Login</i></div>
+                <div class="inline-half" style="text-align: right;">
+                    <button onclick="nextStepClick()" type="button">Pr&oacute;ximo</button>
+                </div>
+            </div>
+        </div>
+        <div class="inline-half"
+            style="background:#FC0E2A;border-radius: 2rem 1.1rem 1.1rem 2rem;box-shadow: 0 0 14px 0 rgb(0 0 0 / 30%);">
+            <div style="width: 100%; text-align: right;"><img width="50%" src="../../Resources/img/tread_name.png"
+                    style="margin-top: 10%;" /></div>
+            <h1 style="text-align: right;">Cadastra-se na Rebbity e aumente seu faturamento em at&eacute; 80%</h1>
+            <div class="center" style="margin: 5% 0;margin-top: 50%;">
+                <h2 style="color: white;margin:0">N&atilde;o perca dinheiro </h2>
+                <i>saiba mais</i>
+            </div>
+        </div>
+    </div>
+    <footer>
+        Footer
+        <hr />
+        <div style="display: inline-box;">
+            <a>&copy; 2020 Rebbity Inc.</a> <a>Privacidade</a> <a>Termos</a> <a>Acessibilidade</a>
+        </div>
+    </footer>
+    <div class="modal" id="confirmAccountModal">
+        <div class="card" style="margin-top: 0;">
+            <h2>Confirme sua conta</h2>
+            <div style="text-align: center;"> <img width="150px" src="../../Resources/img/confirm_blue.png"></div>
+            <p style="max-width: 24rem;margin-bottom: 2rem;">&emsp;Continue seu cadastro, mas antes confirme seu e-mail
+                com o c&oacute;digo que foi enviado: </p>
+            <div class="inline-center">
+                <div class="inline" style="margin:0;">
+                    <div>
+                        <input name="ConfirmationCode" type="number" style="max-width: 14rem;"
+                            onkeypress="disableError('ConfirmationCode')" id="ConfirmationCode"  maxlength="5"/>
+                        <label class="error" id="ConfirmationCodeError"></label>
+                    </div>
+                    <button onclick="confirmCode()" style="margin: 0 0.7rem;">Confirma</button>
+                </div>
+            </div>
+            <p>N&atilde;o recebeu o e-mail? <i class="link" onclick="sendEmailConfirmation()">Enviar Novamente</i></p>
+        </div>
+    </div>
+</body>
+
+</html>
