@@ -68,6 +68,7 @@ function sendEmailConfirmation() {
     xhr.open('POST', host + 'api/Account/SendEmailConfirmation', true);
     xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF8;');
     xhr.origin = origin;
+    xhr.withCredentials = true;
     xhr.responseType = 'json';
     xhr.onload = function () {
 
