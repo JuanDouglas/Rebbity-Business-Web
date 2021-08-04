@@ -17,7 +17,7 @@
   .blobs .blob-center {
     transform-style: preserve-3d;
     position: absolute;
-    background: #000;
+    background: #fc8b1c;
     top: 50%;
     left: 50%;
     width: 30px;
@@ -32,7 +32,7 @@
   
   .blob {
     position: absolute;
-    background:#000;
+    background:#fc8b1c;
     top: 50%;
     left: 50%;
     width: 30px;
