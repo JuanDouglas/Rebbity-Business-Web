@@ -17,7 +17,7 @@
   .blobs .blob-center {
     transform-style: preserve-3d;
     position: absolute;
-    background: #fc8b1c;
+    background: #EE176D;
     top: 50%;
     left: 50%;
     width: 30px;
@@ -27,12 +27,12 @@
     -webkit-animation: blob-grow linear 3.4s infinite;
             animation: blob-grow linear 3.4s infinite;
     border-radius: 50%;
-    box-shadow: 0 -10px 40px -5px #FC0E2A;
+    box-shadow: 0 -10px 40px -5px #E54B39;
   }
   
   .blob {
     position: absolute;
-    background:#fc8b1c;
+    background:#EE176D;
     top: 50%;
     left: 50%;
     width: 30px;

@@ -108,7 +108,7 @@ input:focus {
 button{
     border: none;
     outline: none;
-    background:linear-gradient(99deg, #fc8b1c, #FC0E2A);
+    background:linear-gradient(99deg, #EE176D, #E54B39);
     padding: 0.8rem 1.8em;
     color: white;
     cursor: pointer;
@@ -118,10 +118,10 @@ button{
 }
 
 button.round{
-    border: linear-gradient(99deg, #fc8b1c, #FC0E2A);;
+    border: linear-gradient(99deg, #EE176D, #E54B39);;
     outline: none;
     background: white;
-    color: linear-gradient(99deg, #fc8b1c, #FC0E2A);;
+    color: linear-gradient(99deg, #EE176D, #E54B39);;
     padding: 0.8rem 1.8em;
     cursor: pointer;
     font-size: 15px;
@@ -143,7 +143,7 @@ select{
 @supports (-webkit-appearance: none) or (-moz-appearance: none) {
     input[type=checkbox],
     input[type=radio] {
-        --active: linear-gradient(45deg, #fc8b1c, #FC0E2A);
+        --active: linear-gradient(45deg, #EE176D, #E54B39);
         --active-inner: #fff;
         --focus: 2px rgba(39, 94, 254, .3);
         --border: #BBC1E1;
