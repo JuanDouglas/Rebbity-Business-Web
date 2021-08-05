@@ -1,4 +1,4 @@
-var host = "https://rebbity-api.azurewebsites.net";
+var host = "https://rebbity-api.azurewebsites.net/api";
 function enableError(inputID, error) {
     var input = document.getElementById(inputID);
     var labelError = document.getElementById(inputID + "Error");
