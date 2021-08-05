@@ -78,7 +78,7 @@ function sendEmailConfirmation() {
 
 function loginAccount(user, password) {
     var xhr = new XMLHttpRequest();
-    var url = host + "Api/login/FirstStep?user=" + user;
+    var url = host + 'api/login/FirstStep?user=' + user;
     xhr.open('GET', url, true);
     xhr.orgin = origin;
     xhr.withCredentials = true;
