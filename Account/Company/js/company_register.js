@@ -49,7 +49,7 @@ function createCompanyClick() {
                 }
 
                 if (status == 200) {
-                    var modal = document.getElementById('CompanyAdressModal');
+                    var modal = document.getElementById('successModal');
                     modal.style.display = 'block';
                 }
                 loadingHide();

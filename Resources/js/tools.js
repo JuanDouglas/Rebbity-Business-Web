@@ -169,7 +169,7 @@ function cpfOrCnpjMask(input) {
             var pTwo = numbers.slice(3, 6);
             var pThree = numbers.slice(6, numbers.length);
             text = pOne + '.' + pTwo + '.' + pThree;
-        } else if (numbers.length = 11) {
+        } else if (numbers.length == 11) {
             var pOne = numbers.slice(0, 3);
             var pTwo = numbers.slice(3, 6);
             var pThree = numbers.slice(6, 9);
