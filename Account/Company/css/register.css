@@ -36,10 +36,26 @@ margin: 0 0;
     font-size: 1.8rem;
 }
 
-div.half-left{
+.half-left{
     background:linear-gradient(45deg,  #EE176D, #E54B39);
     border-radius: 2rem 1.1rem 1.1rem 2rem;
     box-shadow: 0 0 14px 0 rgb(0 0 0 / 30%);
     font-family: 'Montserrat Regular';
     min-height: 42rem;
+    transition: 0.4s;
+}
+
+@keyframes half-left{
+    0%{
+    background:linear-gradient(45deg,  #EE176D, #E54B39);
+    
+    }
+
+    50%{
+        background:linear-gradient(45deg, #E54B39,  #EE176D);
+    }
+
+    100%{
+        background:linear-gradient(45deg,  #EE176D, #E54B39);
+    }
 }
