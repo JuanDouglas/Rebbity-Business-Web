@@ -349,6 +349,8 @@ div.inline-half{
 .link{
    color: #276EF1;
    cursor: pointer;
+   padding: 0;
+   margin: 0;
 }
 
 footer{
